@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" cotent="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <title>$Title$</title>
+    <title>放烟花</title>
     <style>
         body {
             background: #000;
@@ -324,6 +324,29 @@
     });
 
     canvas.addEventListener('mouseup', function (e) {
+        e.preventDefault();
+        mousedown = false;
+    });
+    // touch event bindings
+    // update the touch coordinates on mousemove
+    canvas.addEventListener('touchmove', function (e) {
+        mx = e.touches[0].pageX - canvas.offsetLeft;
+        my = e.touches[0].pageY - canvas.offsetTop;
+       // console.log(my,mx)
+    });
+    canvas.addEventListener('touchstart', function (e) {
+        mx = e.touches[0].pageX - canvas.offsetLeft;
+        my = e.touches[0].pageY - canvas.offsetTop;
+
+        console.log(my,mx)
+    });
+    // toggle mousedown state and prevent canvas from being selected
+    canvas.addEventListener('touchstart', function (e) {
+        e.preventDefault();
+        mousedown = true;
+    });
+
+    canvas.addEventListener('touchend', function (e) {
         e.preventDefault();
         mousedown = false;
     });
