@@ -14,6 +14,8 @@
         canvas {
             cursor: crosshair;
             display: block;
+            width:100%;
+            height:100%;
         }
         .a{
             height: 700px; background: #ccc;
@@ -26,17 +28,9 @@
     </style>
 </head>
 <body>
-<div class="a"></div>
-<div class="a"></div>
-<div class="a"></div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 <div class="b"><canvas id="canvas"></canvas></div>
 
-<div class="a"></div>
-<div class="a"></div>
-<div class="a"></div>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <script>
     // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
     // not supported in all browsers though and sometimes needs a prefix, so we need a shim
@@ -261,7 +255,7 @@
         // lighter creates bright highlight points as the fireworks and particles overlap each other
         ctx.globalCompositeOperation = 'lighter';
 
-        var text = "HAPPY NEW YEAR !";
+        var text = "Happy every day  !";
         ctx.font = "50px sans-serif";
         var textData = ctx.measureText(text);
         ctx.fillStyle = "rgba(" + parseInt(random(0, 255)) + "," + parseInt(random(0, 255)) + "," + parseInt(random(0,
